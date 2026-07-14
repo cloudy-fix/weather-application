@@ -1,0 +1,6 @@
+﻿flowchart LR
+    User["City name and OpenWeather API key"] --> App["Kivy UI and weather API client"]
+    App --> Data["OpenWeather API response"]
+    App --> Output["Weather metrics in the UI"]
+    Data --> Output
+

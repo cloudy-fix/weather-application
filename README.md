@@ -1,62 +1,37 @@
-# weather-application
-import kivy
-from kivy.app import App
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.label import Label
-from kivy.uix.textinput import TextInput
-from kivy.uix.button import Button
-import requests
+# Weather Application
 
-class WeatherApp(App):
-    def build(self):
-        self.api_key = "5225ce26df391f8a25a2433215881d84"
+Simple Kivy desktop app that retrieves live weather data by city using the OpenWeather API.
 
+## Features
 
-        layout = BoxLayout(orientation='vertical')
+- City-based weather lookup.
+- Temperature, weather description, humidity, wind speed, and pressure display.
+- Environment-driven API key configuration.
+- Network timeout and API error handling.
 
-        self.city_input = TextInput(hint_text='Enter city name', multiline=False)
-        layout.add_widget(self.city_input)
+## Setup
 
-        self.result_label = Label(text='Weather details will appear here')
-        layout.add_widget(self.result_label)
+```bash
+python -m venv .venv
+.venv\\Scripts\\activate
+pip install -r requirements.txt
+copy .env.example .env
+```
 
-        get_weather_button = Button(text="Get Weather")
-        get_weather_button.bind(on_press=self.get_weather)
-        layout.add_widget(get_weather_button)
+Set `OPENWEATHER_API_KEY` in `.env` or in your shell environment before running.
 
-        return layout
+## Run
 
-    def get_weather(self, instance):
-        city_name = self.city_input.text
-        if city_name:
-            base_url = "http://api.openweathermap.org/data/2.5/weather?"
-            complete_url = f"{base_url}q={city_name}&appid={self.api_key}&units=metric"
-            
-            response = requests.get(complete_url)
-            weather_data = response.json()
-            
-            if response.status_code == 200:
-                if "main" in weather_data:
-                    main_data = weather_data["main"]
-                    weather_desc = weather_data["weather"][0]["description"]
-                    wind_data = weather_data["wind"]
-                    
-                    temperature = main_data["temp"]
-                    pressure = main_data["pressure"]
-                    humidity = main_data["humidity"]
-                    wind_speed = wind_data["speed"]
-                    
-                    self.result_label.text = (f"Temperature: {temperature}°C\n"
-                                              f"Weather: {weather_desc.capitalize()}\n"
-                                              f"Humidity: {humidity}%\n"
-                                              f"Wind Speed: {wind_speed} m/s\n"
-                                              f"Pressure: {pressure} hPa")
-                else:
-                    self.result_label.text = "Could not retrieve weather data. Please try again."
-            else:
-                self.result_label.text = f"Error: {weather_data['message']} (HTTP {response.status_code})"
-        else:
-            self.result_label.text = "Please enter a city name."
+```bash
+python weather_app.py
+```
 
-if __name__ == "__main__":
-    WeatherApp().run()
+## Production Documentation
+
+- [Architecture](docs/ARCHITECTURE.md)
+- [Operations Guide](docs/OPERATIONS.md)
+- [Architecture Diagram](docs/diagrams/architecture.mmd)
+- [Workflow Diagram](docs/diagrams/workflow.mmd)
+- [Security Policy](SECURITY.md)
+- [Contributing Guide](CONTRIBUTING.md)
+
