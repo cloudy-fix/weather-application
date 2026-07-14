@@ -1,0 +1,79 @@
+﻿{
+    "accentTwo":  "#facc15",
+    "stack":  [
+                  "Python",
+                  "Kivy",
+                  "OpenWeather API",
+                  "Open-Meteo Demo",
+                  "API Error Handling"
+              ],
+    "demoType":  "weather",
+    "highlights":  [
+                       "Looks up weather by city",
+                       "Handles API response and errors",
+                       "Shows user-facing integration work"
+                   ],
+    "title":  "Weather Application",
+    "category":  "Desktop App and API Integration",
+    "components":  [
+                       "City input",
+                       "Weather API client",
+                       "Response parser",
+                       "UI display",
+                       "Error handling"
+                   ],
+    "repo":  "weather-application",
+    "runtime":  "GitHub Pages runs a browser-side weather lookup using Open-Meteo for public live data. The repo keeps the Kivy and OpenWeather-key based desktop implementation.",
+    "docs":  [
+                 {
+                     "label":  "Repository",
+                     "url":  "https://github.com/cloudy-fix/weather-application",
+                     "note":  "Source, commits, issues, and project files"
+                 },
+                 {
+                     "label":  "Architecture",
+                     "url":  "https://github.com/cloudy-fix/weather-application/blob/main/docs/ARCHITECTURE.md",
+                     "note":  "System design and responsibilities"
+                 },
+                 {
+                     "label":  "Operations",
+                     "url":  "https://github.com/cloudy-fix/weather-application/blob/main/docs/OPERATIONS.md",
+                     "note":  "Runbook and deployment notes"
+                 },
+                 {
+                     "label":  "Workflow Diagram",
+                     "url":  "https://github.com/cloudy-fix/weather-application/blob/main/docs/diagrams/workflow.mmd",
+                     "note":  "End-to-end process map"
+                 },
+                 {
+                     "label":  "Architecture Diagram",
+                     "url":  "https://github.com/cloudy-fix/weather-application/blob/main/docs/diagrams/architecture.mmd",
+                     "note":  "Component-level diagram"
+                 }
+             ],
+    "accent":  "#0284c7",
+    "visibility":  "Public",
+    "mission":  "A live weather lookup surface for city-based weather data, inspired by the Kivy desktop app and OpenWeather API workflow in the repository.",
+    "metrics":  [
+                    {
+                        "label":  "Lookup",
+                        "detail":  "Temperature, humidity, wind",
+                        "value":  "City weather"
+                    },
+                    {
+                        "label":  "Runtime",
+                        "detail":  "Kivy source in repo",
+                        "value":  "Desktop app"
+                    },
+                    {
+                        "label":  "Demo",
+                        "detail":  "No key required",
+                        "value":  "Live browser API"
+                    }
+                ],
+    "links":  {
+                  "pages":  "https://cloudy-fix.github.io/weather-application/",
+                  "portfolio":  "https://cloudy-fix.github.io/portfolio/projects.html",
+                  "repo":  "https://github.com/cloudy-fix/weather-application"
+              }
+}
